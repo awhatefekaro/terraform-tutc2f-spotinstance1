@@ -16,3 +16,14 @@ provider "aws" {
   region  = "us-east-1"
   profile = "gitoffterraformprofile"
 }
+#Configure remote backend
+terraform {
+  backend "s3" {
+    bucket = "c2fterraformbukt"
+    key    = "spotinststatefile"
+    dynamodb_table = "terrafmdbtbl"
+    region = "us-east-1"
+    profile = "gitoffterraformprofile"
+  }
+}
+
